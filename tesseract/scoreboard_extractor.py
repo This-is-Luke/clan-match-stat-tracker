@@ -22,17 +22,9 @@ def preprocess_image(image_path):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     cv2.imwrite("gray_image.png", gray)
 
-    # Apply Gaussian blur to remove noise
-    blurred = cv2.GaussianBlur(gray, (3, 3), 0)
-    cv2.imwrite("blurred_image.png", blurred)
-
-    # Apply adaptive thresholding
-    binary_image = cv2.adaptiveThreshold(blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
-    cv2.imwrite("binary_image.png", binary_image)
-
     # Resize the image to improve OCR accuracy
     scale_factor = 2
-    resized_image = cv2.resize(binary_image, (binary_image.shape[1] * scale_factor, binary_image.shape[0] * scale_factor), interpolation=cv2.INTER_LINEAR)
+    resized_image = cv2.resize(gray, (gray.shape[1] * scale_factor, gray.shape[0] * scale_factor), interpolation=cv2.INTER_LINEAR)
     cv2.imwrite("resized_image.png", resized_image)
     
     return resized_image
@@ -93,6 +85,6 @@ def main(image_path, output_path):
     save_to_csv(scoreboard_data, output_path)
 
 if __name__ == "__main__":
-    image_path = '/home/luke/lisa/clan-match-stat-tracker/tesseract/images/WhatsApp Image 2024-05-26 at 15.27.35.jpeg'  # Path to your scoreboard image
+    image_path = '/home/luke/lisa/clan-match-stat-tracker/tesseract/images/test.jpg'  # Path to your scoreboard image
     output_path = 'scoreboard_data.csv'  # Path to save the CSV file
     main(image_path, output_path)
