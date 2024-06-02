@@ -1,22 +1,26 @@
 const express = require('express');
-const connectDB = require('./config/db');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 const logger = require('./middleware/logger');
 const rateLimiter = require('./middleware/rateLimiter');
-const emailService = require('./services/emailService');
-const { generateRandomString } = require('./utils/helperFunctions');
 
+// Load environment variables from .env file
 dotenv.config();
 
+// Initialize the Express application
 const app = express();
 
 // Connect Database
 connectDB();
 
-// Init Middleware
+// Middleware to parse JSON requests
 app.use(express.json({ extended: false }));
+
+// Middleware for logging requests
 app.use(logger);
+
+// Middleware for rate limiting
 app.use(rateLimiter);
 
 // Define Routes
@@ -28,19 +32,8 @@ app.use('/api/user', require('./routes/user'));
 // Error Handling Middleware
 app.use(errorHandler);
 
-// Example of using email service and utils
-app.post('/send-email', (req, res) => {
-    const { to, subject, text } = req.body;
-    emailService(to, subject, text);
-    res.send('Email sent');
-});
-
-app.get('/generate-string', (req, res) => {
-    const randomString = generateRandomString(10);
-    res.send(randomString);
-});
-
 // Port Configuration
 const PORT = process.env.PORT || 5000;
 
+// Start the server
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
