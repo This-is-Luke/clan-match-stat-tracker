@@ -7,10 +7,11 @@ import os
 # Set the path to the Tesseract executable for Ubuntu
 pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 
+
 def preprocess_image(image_path):
     if not os.path.exists(image_path):
         raise FileNotFoundError(f"Image file not found: {image_path}")
-    
+
     image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     if image is None:
         raise ValueError(f"Failed to read image from {image_path}")
@@ -24,10 +25,12 @@ def preprocess_image(image_path):
 
     # Resize the image to improve OCR accuracy
     scale_factor = 2
-    resized_image = cv2.resize(gray, (gray.shape[1] * scale_factor, gray.shape[0] * scale_factor), interpolation=cv2.INTER_LINEAR)
+    resized_image = cv2.resize(
+        gray, (gray.shape[1] * scale_factor, gray.shape[0] * scale_factor), interpolation=cv2.INTER_LINEAR)
     cv2.imwrite("resized_image.png", resized_image)
-    
+
     return resized_image
+
 
 def extract_text_from_image(image):
     custom_config = r'--oem 3 --psm 6'
@@ -38,12 +41,14 @@ def extract_text_from_image(image):
         text_file.write(text)
     return text
 
+
 def clean_extracted_text(text):
     # Remove unwanted characters and lines
     cleaned_lines = []
     for line in text.split('\n'):
         line = line.strip()
-        if line and not re.match(r'^[^\w\s]+$', line):  # Remove lines with non-alphanumeric characters only
+        # Remove lines with non-alphanumeric characters only
+        if line and not re.match(r'^[^\w\s]+$', line):
             cleaned_lines.append(line)
     cleaned_text = '\n'.join(cleaned_lines)
     print("Cleaned Text:")
@@ -52,12 +57,15 @@ def clean_extracted_text(text):
         text_file.write(cleaned_text)
     return cleaned_text
 
+
 def parse_scoreboard_text(text):
     lines = text.split('\n')
     parsed_data = []
-    pattern = re.compile(r'([A-Za-z0-9_\[\]]+#\d+)\s+(\d+)\s+(\d+)\s+(\d+:\d+|\d+)\s+(\d+)\s+(\d+)')
+    pattern = re.compile(
+        r'([A-Za-z0-9_\[\]]+#\d+)\s+(\d+)\s+(\d+)\s+(\d+:\d+|\d+)\s+(\d+)\s+(\d+)')
     for line in lines:
-        match = pattern.search(line)  # Use search instead of match to allow partial matches
+        # Use search instead of match to allow partial matches
+        match = pattern.search(line)
         if match:
             username, score, kills, time, defends, deaths = match.groups()
             parsed_data.append({
@@ -72,10 +80,12 @@ def parse_scoreboard_text(text):
             print(f"Failed to match line: {line}")
     return parsed_data
 
+
 def save_to_csv(data, output_path):
     df = pd.DataFrame(data)
     df.to_csv(output_path, index=False)
     print(f"Data saved to {output_path}")
+
 
 def main(image_path, output_path):
     processed_image = preprocess_image(image_path)
@@ -84,7 +94,9 @@ def main(image_path, output_path):
     scoreboard_data = parse_scoreboard_text(cleaned_text)
     save_to_csv(scoreboard_data, output_path)
 
+
 if __name__ == "__main__":
-    image_path = '/home/luke/lisa/clan-match-stat-tracker/tesseract/images/test.jpg'  # Path to your scoreboard image
+    # Path to your scoreboard image
+    image_path = '/home/luke/lisa/clan-match-stat-tracker/tesseract/images/test.jpg'
     output_path = 'scoreboard_data.csv'  # Path to save the CSV file
     main(image_path, output_path)

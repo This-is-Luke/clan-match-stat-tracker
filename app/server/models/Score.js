@@ -1,21 +1,30 @@
 const mongoose = require('mongoose');
 
-const ClanSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    manager: {
+const ScoreSchema = new mongoose.Schema({
+    match: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Match',
         required: true
     },
-    members: [
+    clan: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Clan',
+        required: true
+    },
+    players: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         }
     ],
+    score: {
+        type: Number,
+        required: true
+    },
+    gameModeStats: {
+        type: mongoose.Schema.Types.Mixed,
+        required: true
+    },
     created_at: {
         type: Date,
         default: Date.now
@@ -26,4 +35,4 @@ const ClanSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Clan', ClanSchema);
+module.exports = mongoose.model('Score', ScoreSchema);
