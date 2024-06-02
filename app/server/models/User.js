@@ -7,8 +7,7 @@ const UserSchema = new mongoose.Schema({
     },
     userName: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     name: {
         type: String,
@@ -22,19 +21,6 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    role: {
-        type: String,
-        enum: ['User', 'Manager', 'Admin'],
-        default: 'User'
-    },
-    assigned: {
-        type: Boolean,
-        default: false
-    },
-    date: {
-        type: Date,
-        default: Date.now
     }
 });
 
