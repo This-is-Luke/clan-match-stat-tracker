@@ -33,7 +33,7 @@ router.post('/create-manager', [auth, role(['Admin'])], async (req, res) => {
             email,
             password,
             role: 'Manager',
-            assigned: false
+            assigned: false||true
         });
 
         const salt = await bcrypt.genSalt(10);

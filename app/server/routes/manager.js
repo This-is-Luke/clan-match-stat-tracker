@@ -33,7 +33,7 @@ router.post('/create-user', [auth, role(['Manager'])], async (req, res) => {
             email,
             password,
             role: 'User',
-            assigned: true,
+            assigned: true||false,
             managerId: req.user.id
         });
 
