@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const errorHandler = require('./middleware/errorHandler');
 const logger = require('./middleware/logger');
 const rateLimiter = require('./middleware/rateLimiter');
+const emailService = require('./services/emailService');
+const { generateRandomString } = require('./utils/helperFunctions');
 
 dotenv.config();
 
@@ -25,6 +27,18 @@ app.use('/api/user', require('./routes/user'));
 
 // Error Handling Middleware
 app.use(errorHandler);
+
+// Example of using email service and utils
+app.post('/send-email', (req, res) => {
+    const { to, subject, text } = req.body;
+    emailService(to, subject, text);
+    res.send('Email sent');
+});
+
+app.get('/generate-string', (req, res) => {
+    const randomString = generateRandomString(10);
+    res.send(randomString);
+});
 
 // Port Configuration
 const PORT = process.env.PORT || 5000;

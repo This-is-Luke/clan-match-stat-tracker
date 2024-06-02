@@ -1,0 +1,8 @@
+{
+  "mongoURI": "your-mongodb-uri-here",
+  "jwtSecret": "your-jwt-secret-here",
+  "rateLimit": {
+    "windowMs": 900000,
+    "maxRequests": 100
+  }
+}
