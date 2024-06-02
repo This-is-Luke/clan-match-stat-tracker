@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
 const auth = require('../middleware/auth');
 const { role } = require('../middleware/auth');
 const User = require('../models/User');
+const Clan = require('../models/Clan');
+const Match = require('../models/Match');
+const Score = require('../models/Score');
 
 // Get all users
 router.get('/users', [auth, role(['Admin'])], async (req, res) => {
@@ -33,7 +37,7 @@ router.post('/create-manager', [auth, role(['Admin'])], async (req, res) => {
             email,
             password,
             role: 'Manager',
-            assigned: false||true
+            assigned: false
         });
 
         const salt = await bcrypt.genSalt(10);
