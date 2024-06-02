@@ -4,7 +4,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const auth = require('../middleware/auth');
-const { check, validationResult } = require('express-validator');
+const validate = require('../middleware/validate');
+const { check } = require('express-validator');
 
 // Register new user
 router.post('/register', [
@@ -13,12 +14,7 @@ router.post('/register', [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password must be at least 6 characters').isLength({ min: 6 })
-], async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
-
+], validate, async (req, res) => {
     const { gamerTag, userName, name, email, password, role } = req.body;
 
     try {
@@ -67,12 +63,7 @@ router.post('/register', [
 router.post('/login', [
     check('identifier', 'Please include a valid userName or gamerTag').not().isEmpty(),
     check('password', 'Password is required').exists()
-], async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
-
+], validate, async (req, res) => {
     const { identifier, password } = req.body;
 
     try {
@@ -102,29 +93,6 @@ router.post('/login', [
             if (err) throw err;
             res.json({ token });
         });
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-    }
-});
-
-// Assign user to clan (Manager's dashboard)
-router.put('/assign/:id', [auth, auth.role(['Manager', 'Admin'])], async (req, res) => {
-    try {
-        let user = await User.findById(req.params.id);
-
-        if (!user) {
-            return res.status(404).json({ msg: 'User not found' });
-        }
-
-        if (req.user.role === 'Manager' && user.assigned) {
-            return res.status(400).json({ msg: 'User already assigned to a clan' });
-        }
-
-        user.assigned = true;
-        await user.save();
-
-        res.json(user);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
