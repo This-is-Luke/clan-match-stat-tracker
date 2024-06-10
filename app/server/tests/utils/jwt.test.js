@@ -1,4 +1,4 @@
-const { generateToken, verifyToken } = require('../utils/jwt');
+const { generateToken, verifyToken } = require('../../utils/jwt');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
