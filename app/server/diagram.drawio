@@ -1,91 +1,324 @@
-<mxfile host="65bd71144e">
-    <diagram id="pUzfgVnz7XkT4wG61MmF" name="Page-1">
-        <mxGraphModel dx="953" dy="1283" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="server.js" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-410" y="490" width="120" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="27" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="4" target="6" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="28" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="4" target="9" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="29" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="4" target="10" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#000000&quot;&gt;Config&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-                    <mxGeometry x="-210" y="110" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="6" value="db.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="10" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="9" value="default.json" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="100" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="10" value="default.json" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="190" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="13" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="11" target="6" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="30" y="-260"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="31" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="13">
-                    <mxGeometry x="0.5094" y="3" relative="1" as="geometry">
-                        <mxPoint x="1" as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="11" value="&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;The &lt;code&gt;db.js&lt;/code&gt; file typically plays a crucial role in setting up and managing the connection to the database in a Node.js application. Here's a breakdown of its likely functions and responsibilities:&lt;/font&gt;&lt;/p&gt;&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;1. &lt;strong&gt;Database Configuration&lt;/strong&gt;&lt;/font&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;The &lt;code&gt;db.js&lt;/code&gt; file will often import configuration settings for the database, such as the database URL, port, and authentication details. These configurations are usually stored in environment variables or configuration files (like &lt;code&gt;default.json&lt;/code&gt; or &lt;code&gt;.env&lt;/code&gt;).&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;2. &lt;strong&gt;Establishing Connection&lt;/strong&gt;&lt;/font&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;It contains the logic to establish a connection to the database using a library like &lt;code&gt;mongoose&lt;/code&gt; for MongoDB or &lt;code&gt;sequelize&lt;/code&gt; for SQL databases. This involves creating a connection instance that the rest of the application can use to interact with the database.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;3. &lt;strong&gt;Connection Management&lt;/strong&gt;&lt;/font&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;The &lt;code&gt;db.js&lt;/code&gt; file manages the database connection lifecycle. This includes handling events like connection success, connection error, and disconnection. Proper error handling ensures that the application can respond appropriately to database connection issues.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;4. &lt;strong&gt;Exporting the Connection&lt;/strong&gt;&lt;/font&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;Once the connection is established, the &lt;code&gt;db.js&lt;/code&gt; file exports the connection instance so that it can be imported and used in other parts of the application, such as models and services.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontColor=#000000;align=left;perimeterSpacing=5;" parent="1" vertex="1">
-                    <mxGeometry x="1100" y="-650" width="773" height="780" as="geometry"/>
-                </mxCell>
-                <mxCell id="21" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="20" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="17" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="23" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="18" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="24" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="15" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="25" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="16" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="26" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="19" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="14" value="&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#000000&quot;&gt;Middleware&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-                    <mxGeometry x="-210" y="470" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="15" value="logger.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="740" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="16" value="rateLimiter.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="830" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="auth.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="560" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="18" value="errorHandler.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="650" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="19" value="validate.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="920" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="20" value="adminAuth.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="-30" y="470" width="120" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="30" value="&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;1. &lt;strong&gt;Token Verification Middleware&lt;/strong&gt;&lt;/font&gt;&lt;/h3&gt;&lt;h4&gt;&lt;font color=&quot;#ffffff&quot;&gt;Purpose:&lt;/font&gt;&lt;/h4&gt;&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;This middleware function verifies the presence and validity of a JSON Web Token (JWT) in incoming requests to secure routes. It ensures that only authenticated users can access certain endpoints.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/p&gt;&lt;h4&gt;&lt;font color=&quot;#ffffff&quot;&gt;Use Case:&lt;/font&gt;&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Authentication&lt;/strong&gt;: Ensures that requests to protected routes include a valid JWT token.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;User Identification&lt;/strong&gt;: Decodes the token to retrieve user information, which is then attached to the &lt;code&gt;req.user&lt;/code&gt; object for further use in the request lifecycle.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h4&gt;&lt;font color=&quot;#ffffff&quot;&gt;Importance:&lt;/font&gt;&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Security&lt;/strong&gt;: Prevents unauthorized access by validating tokens.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;User Context&lt;/strong&gt;: Provides user context to the request, enabling user-specific operations in subsequent middleware or route handlers.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;2. &lt;strong&gt;Role-Based Access Control Middleware&lt;/strong&gt;&lt;/font&gt;&lt;/h3&gt;&lt;h4&gt;&lt;font color=&quot;#ffffff&quot;&gt;Purpose:&lt;/font&gt;&lt;/h4&gt;&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;This middleware function enforces role-based access control (RBAC), ensuring that only users with specific roles can access certain endpoints.&lt;/font&gt;&lt;/p&gt;&lt;h4&gt;&lt;font color=&quot;#ffffff&quot;&gt;Use Case:&lt;/font&gt;&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Authorization&lt;/strong&gt;: Checks if the authenticated user has the necessary role to perform specific actions or access certain routes.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Fine-Grained Access Control&lt;/strong&gt;: Allows different levels of access based on user roles (e.g., admin, manager, user).&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h4&gt;&lt;font color=&quot;#ffffff&quot;&gt;Importance:&lt;/font&gt;&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Security&lt;/strong&gt;: Adds an additional layer of security by restricting access based on user roles.&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Role Management&lt;/strong&gt;: Simplifies role management and ensures that users can only perform actions they are authorized to do.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;font color=&quot;#ffffff&quot;&gt;Integration and Flow in the Application:&lt;/font&gt;&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Initialization (server.js)&lt;/strong&gt;:&lt;/font&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;The &lt;code&gt;auth.js&lt;/code&gt; middleware is imported and applied to routes that require authentication and authorization.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Token Verification&lt;/strong&gt;:&lt;/font&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;For each incoming request to a protected route, the token verification middleware checks for the presence and validity of the JWT token. If the token is valid, the user information is decoded and attached to the &lt;code&gt;req.user&lt;/code&gt; object.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;font color=&quot;#ffffff&quot;&gt;&lt;strong&gt;Role-Based Access Control&lt;/strong&gt;:&lt;/font&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;font color=&quot;#ffffff&quot;&gt;For routes requiring specific roles, the role-based middleware checks the user's role. If the user has the required role, the request is allowed to proceed; otherwise, access is denied.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontColor=#000000;align=left;perimeterSpacing=5;" parent="1" vertex="1">
-                    <mxGeometry x="1100" y="260" width="773" height="1350" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
+<mxfile host="app.diagrams.net" modified="2024-06-23T09:58:30.866Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="1k0SWoSCVv7T_fR6DnUt" version="24.5.5" type="device">
+  <diagram id="pUzfgVnz7XkT4wG61MmF" name="Page-1">
+    <mxGraphModel dx="26770" dy="4880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="36" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="87" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="2" target="38" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-17790" y="1150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="2" target="66" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="server.js" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" parent="1" vertex="1">
+          <mxGeometry x="-18520" y="1100" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="27" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#000000&quot;&gt;Config&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="-18460" y="-80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="6" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="6" target="10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-104" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-18390" y="-465.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" value="db.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-18450" y="-350" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="95" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="9" target="94" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="default.json" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;" parent="1" vertex="1">
+          <mxGeometry x="-18360" y="-270" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-107" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-18140" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="test.json" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;" parent="1" vertex="1">
+          <mxGeometry x="-18360" y="-180" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;p style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;The &lt;code style=&quot;&quot;&gt;db.js&lt;/code&gt; file typically plays a crucial role in setting up and managing the connection to the database in a Node.js application. Here&#39;s a breakdown of its likely functions and responsibilities:&lt;/font&gt;&lt;/p&gt;&lt;h3 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;strong&gt;Database Configuration: &lt;/strong&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;The&lt;/span&gt;&lt;/font&gt;&amp;nbsp;&lt;code style=&quot;background-color: initial; font-weight: normal;&quot;&gt;db.js&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; file will often import configuration settings for the database, such as the database URL, port, and authentication details. These configurations are usually stored in environment variables or configuration files (like &lt;/span&gt;&lt;code style=&quot;background-color: initial; font-weight: normal;&quot;&gt;default.json&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; or &lt;/span&gt;&lt;code style=&quot;background-color: initial; font-weight: normal;&quot;&gt;.env&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt;).&lt;/span&gt;&lt;/h3&gt;&lt;h3 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;strong&gt;Establishing Connection:&amp;nbsp;&lt;/strong&gt;&lt;/font&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;It contains the logic to establish a connection to the database using a library like &lt;/span&gt;&lt;code style=&quot;background-color: initial; font-weight: normal;&quot;&gt;mongoose&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; for MongoDB or &lt;/span&gt;&lt;code style=&quot;background-color: initial; font-weight: normal;&quot;&gt;sequelize&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; for SQL databases. This involves creating a connection instance that the rest of the application can use to interact with the database.&lt;/span&gt;&lt;/h3&gt;&lt;h3 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;strong&gt;Connection Management:&amp;nbsp;&lt;/strong&gt;&lt;/font&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;The &lt;code style=&quot;background-color: initial;&quot;&gt;d&lt;/code&gt;&lt;/span&gt;&lt;code style=&quot;background-color: initial; font-weight: normal;&quot;&gt;b.js&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; file manages the database connection lifecycle. This includes handling events like connection success, connection error, and disconnection. Proper error handling ensures that the application can respond appropriately to database connection issues.&lt;/span&gt;&lt;/h3&gt;&lt;h3 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;strong&gt;Exporting the Connection:&amp;nbsp;&lt;/strong&gt;&lt;/font&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Once the connection is established, the &lt;code style=&quot;background-color: initial;&quot;&gt;db.js&lt;/code&gt;&lt;span style=&quot;background-color: initial;&quot;&gt; file exports the connection instance so that it can be imported and used in other parts of the application, such as models and services.&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontColor=#000000;align=left;perimeterSpacing=5;" parent="1" vertex="1">
+          <mxGeometry x="-18615" y="-830" width="450" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="21" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=16;fontColor=#FFFFFF;" parent="1" source="14" target="19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#000000&quot;&gt;Middleware&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="-17820" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="15" target="NF-qdsWI1Lk5tkT5xwey-116" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-17560" y="380" />
+              <mxPoint x="-16990" y="380" />
+              <mxPoint x="-16990" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15" value="logger.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17680" y="310" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-17570" y="440" as="sourcePoint" />
+            <mxPoint x="-17350" y="600" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-17370" y="440" />
+              <mxPoint x="-17370" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="rateLimiter.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17680" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="17" target="30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="auth.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17680" y="130" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="18" target="NF-qdsWI1Lk5tkT5xwey-111" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-17370" y="260" />
+              <mxPoint x="-17370" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="18" value="errorHandler.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17680" y="220" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="19" target="uyjnw9hmqIAHE5pw0u9W-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="validate.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17680" y="490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="20" target="NF-qdsWI1Lk5tkT5xwey-109" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="adminAuth.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17680" y="40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="&lt;h3 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Token Verification Middleware&lt;/font&gt;&lt;/h3&gt;&lt;h4 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Purpose:&lt;/font&gt;&lt;font style=&quot;font-weight: normal; font-size: 12px;&quot;&gt; This middleware functiom the purpose and validity of a JSON Tpkem (JWT) in incoming requests to secure routes. It ensures that only authorised userd can assess certain endpoints.&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;/h4&gt;&lt;h4 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-weight: normal; font-size: 12px;&quot;&gt;A&lt;/font&gt;uthentication&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt;: Ensures that requests to protected routes include a valid JWT token.&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/h4&gt;&lt;h4 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;User Identification&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; Decodes the token to retrieve user information, which is then attached to the &lt;/span&gt;&lt;code style=&quot;font-weight: normal;&quot;&gt;req.user&lt;/code&gt;&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt; object for further use in the request lifecycle.&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/h4&gt;&lt;h4 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Security&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt;: Prevents unauthorized access by validating tokens.&lt;/span&gt;&lt;/font&gt;&lt;/h4&gt;&lt;h4 style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;User Context&lt;span style=&quot;background-color: initial; font-weight: normal;&quot;&gt;: Provides user context to the request, enabling user-specific operations in subsequent middleware or route handlers.&lt;/span&gt;&lt;/font&gt;&lt;/h4&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fontColor=#000000;align=left;perimeterSpacing=5;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-17340" y="30" width="320" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="79" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="38" target="78" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="81" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="38" target="77" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="82" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="38" target="75" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="83" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="38" target="74" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="&lt;font color=&quot;#000000&quot;&gt;Models&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-17790" y="2020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-124" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="48" target="49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-125" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="48" target="50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-126" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="48" target="51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-127" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="48" target="52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-129" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="48" target="53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48" value="&lt;font color=&quot;#000000&quot;&gt;routes&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#aea7a7;fillColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-18520" y="1340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-133" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="49" target="uyjnw9hmqIAHE5pw0u9W-130">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="49" value="admins.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-18730" y="1330" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="auth.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-18670" y="1470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="managers.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-18520" y="1470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="protectedRoute.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-18340" y="1460" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="user.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-18260" y="1330" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="70" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="66" target="68" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="71" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="66" target="67" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="72" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#000000;" parent="1" source="66" target="69" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="66" value="services" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;fillColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-18770" y="1050" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="67" value="emailService.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-19030" y="940" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="68" value="notificationService.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-19030" y="1030" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="69" value="userServices.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;labelBackgroundColor=none;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-19030" y="1120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="74" value="user.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17610" y="2140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="75" target="uyjnw9hmqIAHE5pw0u9W-115">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="75" value="score.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17610" y="2050" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="77" target="uyjnw9hmqIAHE5pw0u9W-111">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-17440" y="2000" />
+              <mxPoint x="-17440" y="1775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="77" value="match.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17610" y="1960" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="78" target="uyjnw9hmqIAHE5pw0u9W-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="78" value="clan.js" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
+          <mxGeometry x="-17610" y="1870" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="94" value="&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;/blockquote&gt;Contains the default configuration settings for the application. These settings include various environment variables and configuration options that the application needs to run.&lt;br&gt;&lt;strong&gt;&lt;br&gt;Centralized Configuration Management&lt;/strong&gt;:&amp;nbsp;It centralizes all the configuration settings in one place, making it easier to manage and update settings without changing the application code.&lt;br&gt;&lt;li style=&quot;&quot;&gt;&lt;p&gt;&lt;font style=&quot;&quot;&gt;&lt;strong&gt;Environment-Specific Settings&lt;/strong&gt;:&amp;nbsp;&lt;/font&gt;While default.json&amp;nbsp;holds the default settings, you can have other configuration files like test.json&amp;nbsp;etc., for different environments. This allows the application to load the appropriate configuration based on the environment it&#39;s running in.&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;&lt;strong&gt;Sensitive Information Storage&lt;/strong&gt;:&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;It can store sensitive information such as API keys, database connection strings, and other credentials securely. This data should be handled carefully and often loaded from environment variables in production environments.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#000000;fillColor=default;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-18140" y="-580" width="430" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="98" value="&lt;p&gt;&lt;font color=&quot;#000000&quot; style=&quot;font-size: 12px;&quot;&gt;The &lt;code style=&quot;&quot;&gt;test.json&lt;/code&gt; file in the &lt;code style=&quot;&quot;&gt;config&lt;/code&gt; folder is typically used to store configuration settings specific to the testing environment. When running tests, it&#39;s often necessary to use different settings than those used in development or production. This ensures that tests run in an isolated environment, avoiding interference with the actual development or production databases and services.&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;Isolated Testing Environment&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;It ensures that the test environment is separate from the development and production environments. This isolation prevents tests from affecting real data and services.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;Specific Configuration for Testing&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;It provides configuration settings that are optimized for running tests. This might include different database URLs, API keys, or service endpoints that are specific to testing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;Consistency in Testing&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: initial;&quot;&gt;It ensures that the tests run with consistent settings, making the results more reliable and repeatable. This consistency is crucial for debugging and verifying the correctness of the application.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontSize=12;fontColor=#FFFFFF;fillColor=none;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-18140" y="-240" width="430" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-109" value="EMPTY" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-17500" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-111" value="&lt;p&gt;It ensures that errors are caught, logged, and responded to in a consistent manner, enhancing the application&#39;s robustness and user experience. Here&#39;s a detailed explanation of its purpose and how it works:&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Centralized Error Handling&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Provides a single place to handle all errors that occur in the application, ensuring consistency in error responses.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Improved Debugging&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Logs errors to a centralized logging system, making it easier to debug and trace issues.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;User-Friendly Error Responses&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Converts technical errors into user-friendly messages, improving the user experience.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-16970" y="240" width="360" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="NF-qdsWI1Lk5tkT5xwey-111" target="NF-qdsWI1Lk5tkT5xwey-111" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NF-qdsWI1Lk5tkT5xwey-116" value="&lt;p&gt;Logging is crucial for monitoring the application&#39;s behavior, debugging issues, and maintaining an audit trail of important actions. Here&#39;s a detailed explanation of its purpose and typical implementation:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Monitoring Application Behavior&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Logs key events and actions within the application to help monitor its behavior and performance.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Debugging:&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Provides detailed information about the application&#39;s execution flow, making it easier to debug issues when they arise.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Auditing&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Maintains a record of important actions and events, which can be useful for auditing and analyzing the application&#39;s usage.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Error Tracking&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Logs errors and exceptions to help identify and diagnose issues in the application.&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;/h3&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;" parent="1" vertex="1">
+          <mxGeometry x="-16970" y="490" width="360" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-102" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="uyjnw9hmqIAHE5pw0u9W-98" target="uyjnw9hmqIAHE5pw0u9W-100">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-17180" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-98" value="&lt;p&gt;The &lt;code&gt;rateLimiter.js&lt;/code&gt; file in the middleware folder is responsible for controlling the rate at which requests are processed by the application. Rate limiting is an essential feature to protect the application from abuse, such as denial-of-service (DoS) attacks, and to ensure fair usage of resources among all users. Here&#39;s a detailed explanation of its purpose and typical implementation:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Preventing Abuse&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Protects the application from being overwhelmed by too many requests in a short period, which could be due to malicious attacks or accidental overuse.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Ensuring Fair Usage&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Ensures that all users have fair access to the application&#39;s resources by limiting the number of requests a single user or IP can make within a given timeframe.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Improving Performance&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Helps maintain the performance and responsiveness of the application by preventing excessive load.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Reducing Server Load&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Limits the number of requests processed by the server, which can help reduce the load and improve stability.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-17340" y="410" width="320" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-100" value="&lt;h3&gt;Explanation of Each Part:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Import Express-Rate-Limit&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const rateLimit = require(&#39;express-rate-limit&#39;);&lt;/code&gt;: Imports the &lt;code&gt;express-rate-limit&lt;/code&gt; library.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Define Rate Limit Rule&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const limiter = rateLimit({ ... });&lt;/code&gt;: Configures the rate limiting rule.&lt;ul&gt;&lt;li&gt;&lt;code&gt;windowMs: 15 * 60 * 1000&lt;/code&gt;: Sets the time window for the rate limiting to 15 minutes.&lt;/li&gt;&lt;li&gt;&lt;code&gt;max: 100&lt;/code&gt;: Limits each IP to 100 requests per 15 minutes.&lt;/li&gt;&lt;li&gt;&lt;code&gt;message: &#39;Too many requests from this IP, please try again after 15 minutes&#39;&lt;/code&gt;: Customizes the response message when the rate limit is exceeded.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Export the Limiter&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;module.exports = limiter;&lt;/code&gt;: Exports the configured rate limiter so it can be used in other parts of the application.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Usage in the Application:&lt;/h3&gt;&lt;p&gt;To use the &lt;code&gt;rateLimiter.js&lt;/code&gt; middleware in your application, you would typically include it in your main server file (e.g., &lt;code&gt;server.js&lt;/code&gt;) early in the middleware stack to apply rate limiting to all incoming requests or to specific routes.&lt;/p&gt;&lt;h3&gt;&lt;/h3&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-16980" y="800" width="440" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-103" value="&lt;p&gt;The &lt;code&gt;validate.js&lt;/code&gt; file in the middleware folder is responsible for validating incoming requests to ensure they meet certain criteria before being processed by the application. This is crucial for maintaining data integrity, preventing security vulnerabilities, and providing a better user experience by catching errors early. Here&#39;s a detailed explanation of its purpose and typical implementation:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Data Integrity&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Ensures that the data sent by clients meets the required format and constraints, which helps maintain the integrity of the application&#39;s data.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Security&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Prevents malicious or malformed data from reaching the core application logic, reducing the risk of security vulnerabilities like SQL injection, XSS, and other attacks.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;User Experience&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Provides immediate feedback to users if their input is invalid, improving the overall user experience by avoiding processing invalid data.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Error Reduction&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Catches errors early in the request lifecycle, reducing the chances of encountering unexpected issues further down the line.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-17790" y="690" width="440" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="uyjnw9hmqIAHE5pw0u9W-107" target="uyjnw9hmqIAHE5pw0u9W-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-107" value="&lt;p&gt;he &lt;code&gt;Clan.js&lt;/code&gt; file under the &lt;code&gt;models&lt;/code&gt; folder in a Node.js application using MongoDB (typically with Mongoose) defines the schema and model for the &quot;Clan&quot; entity. This file is crucial for interacting with the database in a structured and consistent manner. Here’s a detailed explanation of its purpose and typical content:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Define Schema&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Specifies the structure of the &quot;Clan&quot; documents stored in the MongoDB database, including fields, data types, and validation rules.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Create Model&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Creates a Mongoose model based on the schema, which provides an interface for interacting with the &quot;Clan&quot; documents in the database (e.g., querying, creating, updating, and deleting clans).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Data Validation&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Ensures that the data adheres to the defined schema, providing validation before data is saved to the database.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Database Interaction&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Encapsulates the database logic for the &quot;Clan&quot; entity, making it easier to manage and interact with clan data.&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;/h3&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-17420" y="1300" width="480" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-109" value="&lt;h3&gt;Explanation of Each Part:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Import Mongoose&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const mongoose = require(&#39;mongoose&#39;);&lt;/code&gt;: Imports the Mongoose library, which is used for interacting with MongoDB.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Define the Clan Schema&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const ClanSchema = new mongoose.Schema({ ... });&lt;/code&gt;: Defines the schema for the &quot;Clan&quot; collection.&lt;ul&gt;&lt;li&gt;&lt;code&gt;name&lt;/code&gt;: A string field for the clan&#39;s name, which is required, unique, and trimmed.&lt;/li&gt;&lt;li&gt;&lt;code&gt;description&lt;/code&gt;: A string field for the clan&#39;s description, which is optional and trimmed.&lt;/li&gt;&lt;li&gt;&lt;code&gt;createdDate&lt;/code&gt;: A date field for when the clan was created, with a default value of the current date.&lt;/li&gt;&lt;li&gt;&lt;code&gt;members&lt;/code&gt;: An array of ObjectIds that reference the &quot;User&quot; collection, representing the members of the clan.&lt;/li&gt;&lt;li&gt;&lt;code&gt;leader&lt;/code&gt;: An ObjectId that references the &quot;User&quot; collection, representing the leader of the clan, which is required.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create the Clan Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const Clan = mongoose.model(&#39;Clan&#39;, ClanSchema);&lt;/code&gt;: Creates a Mongoose model named &quot;Clan&quot; based on the defined schema.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Export the Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;module.exports = Clan;&lt;/code&gt;: Exports the Clan model so it can be used in other parts of the application.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Usage in the Application:&lt;/h3&gt;&lt;p&gt;The Clan model can be used in different parts of the application to perform CRUD operations on the &quot;Clan&quot; collection.&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-16900" y="1290" width="730" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="uyjnw9hmqIAHE5pw0u9W-111" target="uyjnw9hmqIAHE5pw0u9W-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-111" value="&lt;p&gt;The &lt;code&gt;Match.js&lt;/code&gt; file under the &lt;code&gt;models&lt;/code&gt; folder in a Node.js application using MongoDB (typically with Mongoose) defines the schema and model for the &quot;Match&quot; entity. This file is crucial for structuring, validating, and interacting with match data in the database. Here’s a detailed explanation of its purpose and typical content:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Define Schema&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Specifies the structure of the &quot;Match&quot; documents stored in the MongoDB database, including fields, data types, and validation rules.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Create Model&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Creates a Mongoose model based on the schema, which provides an interface for interacting with the &quot;Match&quot; documents in the database (e.g., querying, creating, updating, and deleting matches).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Data Validation&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Ensures that the data adheres to the defined schema, providing validation before data is saved to the database.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Database Interaction&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Encapsulates the database logic for the &quot;Match&quot; entity, making it easier to manage and interact with match data.&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;/h3&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-17410" y="1640" width="460" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-113" value="&lt;h3&gt;Explanation of Each Part:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Import Mongoose&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const mongoose = require(&#39;mongoose&#39;);&lt;/code&gt;: Imports the Mongoose library, which is used for interacting with MongoDB.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Define the Match Schema&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const MatchSchema = new mongoose.Schema({ ... });&lt;/code&gt;: Defines the schema for the &quot;Match&quot; collection.&lt;ul&gt;&lt;li&gt;&lt;code&gt;clan1&lt;/code&gt;: An ObjectId that references the &quot;Clan&quot; collection, representing one of the clans in the match, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;clan2&lt;/code&gt;: An ObjectId that references the &quot;Clan&quot; collection, representing the other clan in the match, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;scoreClan1&lt;/code&gt;: A number representing the score of the first clan, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;scoreClan2&lt;/code&gt;: A number representing the score of the second clan, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;date&lt;/code&gt;: A date field representing when the match took place, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;location&lt;/code&gt;: A string field representing the location of the match, which is optional and trimmed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create the Match Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const Match = mongoose.model(&#39;Match&#39;, MatchSchema);&lt;/code&gt;: Creates a Mongoose model named &quot;Match&quot; based on the defined schema.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Export the Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;module.exports = Match;&lt;/code&gt;: Exports the Match model so it can be used in other parts of the application.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;&lt;/h3&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-16880" y="1720" width="780" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="uyjnw9hmqIAHE5pw0u9W-115" target="uyjnw9hmqIAHE5pw0u9W-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-115" value="&lt;p&gt;The &lt;code&gt;Match.js&lt;/code&gt; file under the &lt;code&gt;models&lt;/code&gt; folder in a Node.js application using MongoDB (typically with Mongoose) defines the schema and model for the &quot;Match&quot; entity. This file is crucial for structuring, validating, and interacting with match data in the database. Here’s a detailed explanation of its purpose and typical content:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Define Schema&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Specifies the structure of the &quot;Match&quot; documents stored in the MongoDB database, including fields, data types, and validation rules.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Create Model&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Creates a Mongoose model based on the schema, which provides an interface for interacting with the &quot;Match&quot; documents in the database (e.g., querying, creating, updating, and deleting matches).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Data Validation&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Ensures that the data adheres to the defined schema, providing validation before data is saved to the database.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Database Interaction&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Encapsulates the database logic for the &quot;Match&quot; entity, making it easier to manage and interact with match data.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-17410" y="1930" width="460" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-116" value="&lt;h3&gt;Explanation of Each Part:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Import Mongoose&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const mongoose = require(&#39;mongoose&#39;);&lt;/code&gt;: Imports the Mongoose library, which is used for interacting with MongoDB.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Define the Match Schema&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const MatchSchema = new mongoose.Schema({ ... });&lt;/code&gt;: Defines the schema for the &quot;Match&quot; collection.&lt;ul&gt;&lt;li&gt;&lt;code&gt;clan1&lt;/code&gt;: An ObjectId that references the &quot;Clan&quot; collection, representing one of the clans in the match, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;clan2&lt;/code&gt;: An ObjectId that references the &quot;Clan&quot; collection, representing the other clan in the match, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;scoreClan1&lt;/code&gt;: A number representing the score of the first clan, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;scoreClan2&lt;/code&gt;: A number representing the score of the second clan, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;date&lt;/code&gt;: A date field representing when the match took place, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;location&lt;/code&gt;: A string field representing the location of the match, which is optional and trimmed.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create the Match Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const Match = mongoose.model(&#39;Match&#39;, MatchSchema);&lt;/code&gt;: Creates a Mongoose model named &quot;Match&quot; based on the defined schema.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Export the Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;module.exports = Match;&lt;/code&gt;: Exports the Match model so it can be used in other parts of the application.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-16880" y="2110" width="780" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uyjnw9hmqIAHE5pw0u9W-119" target="uyjnw9hmqIAHE5pw0u9W-121">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-119" value="&lt;p&gt;The &lt;code&gt;User.js&lt;/code&gt; file under the &lt;code&gt;models&lt;/code&gt; folder in a Node.js application using MongoDB (typically with Mongoose) defines the schema and model for the &quot;User&quot; entity. This file is crucial for structuring, validating, and interacting with user data in the database. Here’s a detailed explanation of its purpose and typical content:&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Define Schema&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Specifies the structure of the &quot;User&quot; documents stored in the MongoDB database, including fields, data types, and validation rules.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Create Model&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Creates a Mongoose model based on the schema, which provides an interface for interacting with the &quot;User&quot; documents in the database (e.g., querying, creating, updating, and deleting users).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Data Validation&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Ensures that the data adheres to the defined schema, providing validation before data is saved to the database.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Database Interaction&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Encapsulates the database logic for the &quot;User&quot; entity, making it easier to manage and interact with user data.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-17410" y="2240" width="470" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.001;entryY=0.464;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="74" target="uyjnw9hmqIAHE5pw0u9W-119">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-121" value="&lt;h3&gt;Explanation of Each Part:&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Import Mongoose&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const mongoose = require(&#39;mongoose&#39;);&lt;/code&gt;: Imports the Mongoose library, which is used for interacting with MongoDB.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Define the User Schema&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const UserSchema = new mongoose.Schema({ ... });&lt;/code&gt;: Defines the schema for the &quot;User&quot; collection.&lt;ul&gt;&lt;li&gt;&lt;code&gt;name&lt;/code&gt;: A string field for the user&#39;s name, which is required and trimmed.&lt;/li&gt;&lt;li&gt;&lt;code&gt;email&lt;/code&gt;: A string field for the user&#39;s email, which is required, unique, trimmed, and converted to lowercase.&lt;/li&gt;&lt;li&gt;&lt;code&gt;password&lt;/code&gt;: A string field for the user&#39;s password, which is required.&lt;/li&gt;&lt;li&gt;&lt;code&gt;role&lt;/code&gt;: A string field for the user&#39;s role, which is an enum with possible values &#39;user&#39; or &#39;admin&#39;, and defaults to &#39;user&#39;.&lt;/li&gt;&lt;li&gt;&lt;code&gt;createdDate&lt;/code&gt;: A date field for when the user was created, with a default value of the current date.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create the User Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;const User = mongoose.model(&#39;User&#39;, UserSchema);&lt;/code&gt;: Creates a Mongoose model named &quot;User&quot; based on the defined schema.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Export the Model&lt;/strong&gt;:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;module.exports = User;&lt;/code&gt;: Exports the User model so it can be used in other parts of the application.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="-17410" y="2590" width="470" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-130" value="&lt;p&gt;The &lt;code&gt;admin.js&lt;/code&gt; file under the &lt;code&gt;routes&lt;/code&gt; folder in a Node.js application typically contains route definitions and handlers specific to administrative operations. These routes are usually protected by authentication and authorization middleware to ensure that only users with the appropriate administrative roles can access them. Here’s a detailed explanation of its purpose and typical content:&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Define Admin-Specific Routes&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Contains routes that handle administrative tasks such as managing users, viewing system logs, and other operations that require elevated privileges.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Enforce Authorization&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Uses middleware to ensure that only authenticated users with administrative roles can access these routes. This prevents unauthorized access to sensitive operations.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: initial;&quot;&gt;Encapsulate Admin Logic&lt;/strong&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Encapsulates the business logic related to administrative tasks, keeping the code organized and modular.&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-19330" y="1270" width="520" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="uyjnw9hmqIAHE5pw0u9W-134" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-19000" y="1570" width="350" height="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>
