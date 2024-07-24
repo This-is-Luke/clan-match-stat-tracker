@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const connectDB = require('./config/db');
+const { db } = require('./src/firebase'); // Import Firestore configuration
 const errorHandler = require('./middleware/errorHandler');
 const logger = require('./middleware/logger');
 const rateLimiter = require('./middleware/rateLimiter');
@@ -8,9 +8,6 @@ const rateLimiter = require('./middleware/rateLimiter');
 dotenv.config();
 
 const app = express();
-
-// Connect Database
-connectDB();
 
 // Middleware
 app.use(express.json({ extended: false }));
